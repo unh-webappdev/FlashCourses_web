@@ -1,9 +1,9 @@
-###Description
+### Description
 
 [Description of the issue]
 
 
-###Steps to Reproduce
+### Steps to Reproduce
 
 1. [First step]
 2. [Second step]
@@ -16,7 +16,7 @@ Actual behavior: [What actually happens]
 Frequency: [What percentage of the time does the issue reproduce?]
 
 
-###Versions
+### Versions
 
 Version of the app being used:
 
@@ -25,6 +25,6 @@ Operating system:
 Version of the operating system:
 
 
-###Additional Information
+### Additional Information
 
 [Any additional information, configuration, or data that might be needed to reproduce the issue.]
