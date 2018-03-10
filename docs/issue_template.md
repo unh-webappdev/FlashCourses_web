@@ -2,6 +2,7 @@ Description
 
 [Description of the issue]
 
+
 Steps to Reproduce
 
 [First step]
@@ -14,11 +15,15 @@ Actual behavior: [What actually happens]
 
 Frequency: [What percentage of the time does the issue reproduce?]
 
+
 Versions
 
-Version of the app being used: 
+Version of the app being used:
+
 Operating system:
+
 Version of the operating system:
+
 
 Additional Information
 
