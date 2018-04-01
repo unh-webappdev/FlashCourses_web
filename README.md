@@ -1,2 +1,2 @@
-# FlashCourses_api
-Repository for the FlashCourses API
+# FlashCourses_web
+Repository for the FlashCourses Web App
