@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+<div class='container-fluid'>
+<h2>myUniversity</h2>
+<p>The input type="search is used for search fields (behaves like a regular text field):</p>
+<form action="/action_page.php">
+  Search University:
+  <input type="search" name="universitysearch">
+  <input type="submit">
+</form>
+</div>
+<div class='container-fluid'>
+<br><br>
+
+<form action="/action_page.php">
+  <select name="myUniversity" size="7">
+    <option value="rivier University">Rivier University</option>
+    <option value="southern New Hampshire University">Southern New Hampshire University</option>
+    <option value="new Hampshire Institute of Art">New Hampshire Institute of Art</option>
+    <option value="university of New Hampshire">University of New Hampshire </option>
+    <option value="university of New Hampshire School of Law">University of New Hampshire School of Law</option>
+    <option value="manchester Community College">Manchester Community College</option>
+     <option value="nashua Community College">Nashua Community College</option>
+      <option value="springfield College School of Human Services">Springfield College School of Human Services</option>
+       <option value="thomas More College of Liberal Arts">Thomas More College of Liberal Arts</option>
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+</div>
+</body>
+</html>
+{% endblock %}
