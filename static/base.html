@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>flashcourses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class='container-fluid'>
+      <nav class ='nav nav-pills'>
+        <a class="nav-link active" href="">Home</a>
+        <a class="nav-link active" href="">Institutions</a>
+        <a class="nav-link active" href="">Courses</a>
+        <a class="nav-link active" href="">Log-in</a>
+
+       
+      </nav>
+
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
