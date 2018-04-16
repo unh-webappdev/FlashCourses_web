@@ -1,37 +1,25 @@
-{% extends 'base.html' %}
-
-{% block content %}
 <!DOCTYPE html>
 <html>
 <body>
 <div class='container-fluid'>
 <h2>myUniversity</h2>
 <p>The input type="search is used for search fields (behaves like a regular text field):</p>
-<form action="/action_page.php">
+
   Search University:
-  <input type="search" name="universitysearch">
-  <input type="submit">
-</form>
+  <input type="search" id="universitysearch">
+  <input name="Button1" type="button" value="submit" />
+  
 </div>
-<div class='container-fluid'>
+<div class='container-fluid' id="copyforeachinstance">
+<asp:Label runat="server" Text="Label" id="Label1"></asp:Label>
+</div>
 <br><br>
 
-<form action="/action_page.php">
-  <select name="myUniversity" size="7">
-    <option value="rivier University">Rivier University</option>
-    <option value="southern New Hampshire University">Southern New Hampshire University</option>
-    <option value="new Hampshire Institute of Art">New Hampshire Institute of Art</option>
-    <option value="university of New Hampshire">University of New Hampshire </option>
-    <option value="university of New Hampshire School of Law">University of New Hampshire School of Law</option>
-    <option value="manchester Community College">Manchester Community College</option>
-     <option value="nashua Community College">Nashua Community College</option>
-      <option value="springfield College School of Human Services">Springfield College School of Human Services</option>
-       <option value="thomas More College of Liberal Arts">Thomas More College of Liberal Arts</option>
-  </select>
   <br><br>
-  <input type="submit">
-</form>
+<div class='container-fluid'>
+
+ <input name="Button1" type="button" value="submit" />
+
 </div>
 </body>
 </html>
-{% endblock %}
