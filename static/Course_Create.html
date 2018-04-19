@@ -1,31 +1,20 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>flashcourses</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
 
-  <body>
-    <div class='container-fluid'>
-      <nav class ='nav nav-pills'>
-        <a class="nav-link active" href="">Home</a>
-        <a class="nav-link active" href="">Institutions</a>
-        <a class="nav-link active" href="">Courses</a>
-        <a class="nav-link active" href="">Log-in</a>
-      </nav>
+ 
+  <div class='container-fluid'>
+      <select id="cour_Instatutoin"></select> 
+      <p>Course Name :  </p>
+      <input type="text"  id="cour_name_entry">
       <br>
-      <div id="div1"> Name of course bing made</div>
-      <br>
-      <div id="div2">Course description</div>
+      <p>Course Descriptoin :  </p>
+      <input type="text" id="cour_desc_entry">
 
-      <br><br>
+  </div>
+  <br><br>
+     <div class='container-fluid'>
+       <button >Create Course</button>
+     </div>
 
-      <button type="button" >Create Course</button>
+      
 
-      {% block content %}
-      {% endblock %}
+      
 
-    </div>
-  </body>
-</html>
