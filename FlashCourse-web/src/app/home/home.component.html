@@ -1,3 +1,103 @@
-<p>
-  home works!
-</p>
+
+
+
+<button (click)="getInstitutions()">
+    Grab Colleges!</button>
+  
+
+<br>
+  <div
+    *ngFor="let school of InstitutionData">
+    {{ school.institution_name }}
+    {{school.unique_id}}
+    <button (click)="getCourseData(school.unique_id)">Get Courses!</button>
+
+
+  </div>
+  <br>
+<form>
+  Create College <br>
+  College Name: <input type="text" name="institution_name" id="cinst_institution_name"><br>
+  IPED Number: <input type="text" name="ipeds" id="cinst_ipeds"><br>
+  Location:    <input type="text" name="location" id="cinst_location"><br>
+</form>
+<br>
+<form>
+  Edit College <br>
+  College Name: <input type="text" name="institution_name" id="einst_institution_name"><br>
+  IPED Number: <input type="text" name="ipeds" id="einst_ipeds"><br>
+  Location:    <input type="text" name="location" id="einst_location"><br>
+</form>
+<br>
+<form>
+  Create Course <br>
+  Course Name: <input type="text" name="course_title" id="ccourse_course_title"><br>
+  Course Number: <input type="text" name="course_number" id="ccourse_course_number" ><br>
+  Course ID:    <input type="text" name="course_id" id="ccourse_course_id"><br>
+</form>
+<br>
+  <div *ngFor="let course of courseData">
+    {{course.course_title}}
+    {{course.course_id}}
+    {{course.course_description}} 
+    <button (click)="getDecks(course.unique_id)"> Get Decks!</button>
+   <button>
+    Create Deck </button>
+    <button (click)="deleteCourse(course.unique_id)">Delete Course</button>
+    
+</div>
+<br>
+<form>
+  Edit Course <br>
+  Course Name: <input type="text" name="title" id="ecourse_course_title"><br>
+  Course Number: <input type="text" name="parent_user" id="ecourse_course_id"><br>
+  Course Description: <input type="text" name="parent_user" id="ecourse_course_description"><br>
+</form>
+
+<div *ngFor="let deck of deckData">
+    {{deck.title}}
+    {{deck.deck_description}}
+    <button (click)="getCards(deck.unique_id)">Show Cards!</button>
+  </div>
+
+<br>
+<form>
+  Create Deck <br>
+  Deck Name: <input type="text" name="title" id="cdeck_title"><br>
+  Parent User: <input type="text" name="parent_user" id="cdeck_parent_user"><br>
+</form>
+<br>
+<form>
+  Edit Deck <br>
+  Deck Name: <input type="text" name="title" id="edeck_title"><br>
+  Parent User: <input type="text" name="parent_user" id="edeck_parent_user"><br>
+</form>
+<br>
+
+
+<br>
+<form> 
+  Create Card<br>
+  Front:  <input type="text" name="front" id="ccard_front"><br>
+  Back: <input type="text" name="back" id="ccard_back"><br>
+</form>
+
+<form> 
+  Edit Card<br>
+  Front: <input type="text" name="front" id="ecard_front"><br>
+  Back: <input type="text" name="back" id="ecard_back"><br>
+</form>
+
+<div *ngIf = "currentCard">
+  {{currentCard.front}}
+  {{currentCard.back}}
+  {{currentCard.parent_deck}}
+  <button (click)="renderCardForward()">
+    Next Card
+  </button>
+  <button (click)="renderCardBackwards()">
+    Prev Card
+  </button>
+ 
+</div>
+
