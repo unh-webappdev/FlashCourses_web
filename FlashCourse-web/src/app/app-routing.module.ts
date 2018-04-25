@@ -16,7 +16,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TermsComponent } from './terms/terms.component';
 import { ActivatedRoute } from '@angular/router';
-
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
 // {
@@ -24,53 +24,22 @@ const routes: Routes = [
 //     redirectTo: 'home',
 //     pathMatch: 'full'
 // },
-{
-    path: 'about',
-    component: AboutComponent
-},
-{
-    path: 'contact',
-    component: ContactComponent
-},
-{
-    path: 'coursedetails',
-    component: CourseDetailsComponent
-},
-{
-    path: 'courses',
-    component: CoursesComponent
-},
-{path: 'flashcards',
-component: FlashcardsComponent
-},
-{
-    path: 'home',
-    component: HomeComponent
-},
-{
-    path: 'home/:id',
-    component: HomeComponent
-},
-{
-    path: 'institutions',
-    component: InstitutionsComponent
-},
-{
-    path: 'login',
-    component: LoginComponent
-},
-{
-    path: 'privacy',
-    component: PrivacyComponent
-},
-{
-    path: 'registration',
-    component: RegistrationComponent
-},
-{
-    path: 'terms',
-    component: TermsComponent
-},
+{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
+{ path: 'about', component: AboutComponent },
+{ path: 'contact', component: ContactComponent },
+{ path: 'coursedetails', component: CourseDetailsComponent },
+{ path: 'courses', component: CoursesComponent },
+{ path: 'flashcards', component: FlashcardsComponent },
+{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+{ path: 'home/:id', component: HomeComponent },
+{ path: 'institutions', component: InstitutionsComponent },
+{ path: 'login', component: LoginComponent },
+{ path: 'privacy', component: PrivacyComponent },
+{ path: 'registration', component: RegistrationComponent },
+{ path: 'terms', component: TermsComponent },
+
+// otherwise redirect to home
+{ path: '**', redirectTo: '' }
 
 ];
 

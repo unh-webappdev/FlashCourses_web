@@ -14,7 +14,7 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string): Observable<boolean> {
-        return this.http.post('http://127.0.0.1:8000/api/token', { username: username, password: password })
+        return this.http.post('http://159.65.236.42/api/token/', { username: username, password: password })
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let token = response.json() && response.json().access;

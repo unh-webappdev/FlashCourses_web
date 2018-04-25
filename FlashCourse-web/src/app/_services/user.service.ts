@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
 
-import { AuthenticationService } from '../_services/index';
-import { User } from '../_models/index';
+import { AuthenticationService } from '../_services/authentication.service';
+import { User } from '../_models/user';
 
 @Injectable()
 export class UserService {
@@ -20,9 +20,13 @@ export class UserService {
         let options = new RequestOptions({ headers: headers });
 
         // get users from api
-        return this.http.get('http://127.0.0.1:8000/api/token', options)
+        return this.http.get('http://159.65.236.42/api/token/', options)
             .map((response: Response) => response.json());
 
+    }
+
+    create(user: User) {
+        return this.http.put('http://159.65.236.42/accounts/api/registration', user);
     }
 
     // getAll() {
@@ -31,10 +35,6 @@ export class UserService {
 
     // getById(id: number) {
     //     return this.http.get('/api/users/' + id);
-    // }
-
-    // create(user: User) {
-    //     return this.http.post('/api/users', user);
     // }
 
     // update(user: User) {
