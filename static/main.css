@@ -1,0 +1,13 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+</style>
+/* This text is in Helvetica  or osans depending on what is avable to the user*/
+a{font-family: 'Helvetica Neue','Helvetica','Open Sans', sans-serif;}
+h1,h2,h3,h4,h5,h6{font-family: 'Helvetica Neue','Helvetica','Open Sans', sans-serif;}
+p{font-family: 'Helvetica Neue','Helvetica','Open Sans', sans-serif;}
+a{font-family: 'Helvetica Neue','Helvetica','Open Sans', sans-serif;}
+label{font-family: 'Helvetica Neue','Helvetica','Open Sans', sans-serif;}
+textarea{font-family: 'Helvetica Neue'  ,'Helvetica' ,'Open Sans', sans-serif;}
+select{font-family: 'Helvetica Neue'  ,'Helvetica' ,'Open Sans', sans-serif;}
+.navbarcollor{background-color: #98FB98;
+    }
