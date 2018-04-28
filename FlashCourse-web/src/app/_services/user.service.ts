@@ -26,7 +26,7 @@ export class UserService {
     }
 
     create(user: User) {
-        return this.http.put('http://159.65.236.42/accounts/api/registration', user);
+        return this.http.post('http://159.65.236.42/accounts/api/registration', user);
     }
 
     // getAll() {

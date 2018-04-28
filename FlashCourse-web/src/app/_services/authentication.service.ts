@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Subject, Observable } from "rxjs";
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
     public token: string;
+    userSignedIn$: Subject<boolean> = new Subject();
 
     constructor(private http: Http) {
         // set token if saved in local storage
@@ -40,4 +41,5 @@ export class AuthenticationService {
         this.token = null;
         localStorage.removeItem('currentUser');
     }
+    
 }
