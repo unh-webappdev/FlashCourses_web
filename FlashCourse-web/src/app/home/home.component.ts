@@ -351,7 +351,7 @@ async deleteCard(cardID) {
 */
 async createCard(form) {
     return this.http
-      .post(`http://127.0.0.1:8000/flashcards/api/card/create/`, {
+      .post(`http://159.65.236.42/flashcards/api/card/create/`, {
         'parent_deck': 1,
         'front': form.value.front,
         'back': form.value.back
