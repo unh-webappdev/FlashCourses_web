@@ -1,3 +1,17 @@
+/*
+Author: Andry Bintoro, Lawrence Thompson
+Last Updated: April 2018
+Path: /app/_services/authentication.service.ts
+The JWT authentication service is used to login and logout of the application, 
+to login it posts the users credentials to the api and checks the response for a JWT token, 
+if there is one it means authentication was successful so the user details are added to local storage
+and the token saved to the AuthenticationService.token property. 
+
+The token property is used by other services in the application to set the authorization header
+of http requests made to secure api endpoints.
+The logged in user details are stored in local storage so the user will stay logged in if they refresh the browser and also between browser sessions until they logout. If you don't want the user to stay logged in between refreshes or sessions the behavior could easily be changed by storing user details somewhere less persistent such as session storage or in a property of the authentication service.
+*/
+
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Subject, Observable } from "rxjs";
@@ -6,7 +20,6 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class AuthenticationService {
     public token: string;
-    userSignedIn$: Subject<boolean> = new Subject();
 
     constructor(private http: Http) {
         // set token if saved in local storage

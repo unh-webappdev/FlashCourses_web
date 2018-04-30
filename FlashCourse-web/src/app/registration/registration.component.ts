@@ -1,3 +1,10 @@
+/*
+Author: Andry Bintoro, Lawrence Thompson
+Last Updated: April 2018
+Path: /app/registration/registration.component.ts
+The register component has a single register() method that creates a new user with
+user service when the register form is submitted.
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../_services/user.service';

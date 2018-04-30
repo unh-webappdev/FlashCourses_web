@@ -1,3 +1,11 @@
+/*
+Author: Andry Bintoro, Lawrence Thompson
+Last Updated: April 2018
+Path: /app/_services/alert.service.ts
+The alert service enables any component in the application to display alert messages at 
+the top of the page via the alert component.
+*/
+
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs';
