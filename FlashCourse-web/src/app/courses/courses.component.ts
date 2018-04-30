@@ -1,4 +1,7 @@
+import { Course } from './../course';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-courses',
@@ -7,7 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  courseData: Object;
+  _courseArray: Course[];
+
+  constructor(private http: Http, private dataService: DataService) { }
+/*
+  Courses components are currently unimplemented.
+  Uses a data service.
+*/
+
+/*   getCourses(courseReq): void{
+    this.dataService.getCourseData(courseReq)
+    .subscribe(
+      (resultArray) => {
+        this._courseArray = resultArray;
+      },
+      error => console.log("Error :: " + error)
+    );
+    this.dataService.coursesLoaded = true;
+  } */
 
   ngOnInit() {
   }

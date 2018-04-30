@@ -1,3 +1,25 @@
-<p>
-  institutions works!
-</p>
+<!-- 
+  Not currently implemented. See App Architecture - Next Steps
+  For future implementation ideas.
+
+ -->
+
+<div class='container-fluid'>
+  <h1>Institutions</h1>
+  <!-- <p>The input type="search is used for search fields (behaves like a regular text field):</p>
+  
+    Search University:
+    <input type="search" id="universitysearch">
+    <input name="Button1" type="button" value="submit" />
+    
+  </div>
+   -->
+  <!-- <button (click)="getInstitutions()">GET SCHOOLS</button> -->
+
+  <div *ngFor="let school of _InstitutionsArray">
+    {{ school.institution_name }} <button (click)="getCourses(school.unique_id)" > Get Courses For {{ school.institution_name }} </button>
+    <button> Add a Course To {{ school.institution_name }} </button>
+    <button> Edit {{ school.institution_name }} </button>
+    <button> Delete {{ school.institution_name }} </button>
+  </div> 
+  </div>
