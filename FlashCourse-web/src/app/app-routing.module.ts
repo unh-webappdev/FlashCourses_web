@@ -1,3 +1,11 @@
+/*
+Author: Andry Bintoro, Lawrence Thompson
+Last Updated: April 2018
+Path: /app/app.routing.ts
+The app routing file defines the routes of the application, each route contains a path and associated component. 
+The home route is secured by passing the AuthGuard to the canActivate property of the route.
+*/
+
 import { NgModule } from '@angular/core';
 import { ModuleWithProviders } from '@angular/core';
 import {
@@ -6,7 +14,6 @@ import {
 } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CoursesComponent} from './courses/courses.component';
 import { FlashcardsComponent} from './flashcards/flashcards.component';
 import { HomeComponent } from './home/home.component';
@@ -16,7 +23,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TermsComponent } from './terms/terms.component';
 import { ActivatedRoute } from '@angular/router';
-
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
 // {
@@ -24,53 +31,21 @@ const routes: Routes = [
 //     redirectTo: 'home',
 //     pathMatch: 'full'
 // },
-{
-    path: 'about',
-    component: AboutComponent
-},
-{
-    path: 'contact',
-    component: ContactComponent
-},
-{
-    path: 'coursedetails',
-    component: CourseDetailsComponent
-},
-{
-    path: 'courses',
-    component: CoursesComponent
-},
-{path: 'flashcards',
-component: FlashcardsComponent
-},
-{
-    path: 'home',
-    component: HomeComponent
-},
-{
-    path: 'home/:id',
-    component: HomeComponent
-},
-{
-    path: 'institutions',
-    component: InstitutionsComponent
-},
-{
-    path: 'login',
-    component: LoginComponent
-},
-{
-    path: 'privacy',
-    component: PrivacyComponent
-},
-{
-    path: 'registration',
-    component: RegistrationComponent
-},
-{
-    path: 'terms',
-    component: TermsComponent
-},
+{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
+{ path: 'about', component: AboutComponent },
+{ path: 'contact', component: ContactComponent },
+{ path: 'courses', component: CoursesComponent },
+{ path: 'flashcards', component: FlashcardsComponent },
+{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+{ path: 'home/:id', component: HomeComponent },
+{ path: 'institutions', component: InstitutionsComponent },
+{ path: 'login', component: LoginComponent },
+{ path: 'registration', component: RegistrationComponent },
+{ path: 'terms', component: TermsComponent },
+{ path: 'privacy', component: PrivacyComponent },
+
+// otherwise redirect to home
+{ path: '**', redirectTo: '' }
 
 ];
 
@@ -100,4 +75,6 @@ component: FlashcardsComponent
 
 */
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: 
+
+ModuleWithProviders = RouterModule.forRoot(routes);

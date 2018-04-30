@@ -1,3 +1,8 @@
+/*
+Author: Andry Bintoro, Lawrence Thompson
+Last Updated: April 2018
+Path: /app/courses/courses.component.ts
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({
