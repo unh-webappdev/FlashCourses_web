@@ -1,3 +1,36 @@
-<p>
-  institutions works!
-</p>
+<!-- 
+
+  institutions.component.ts
+  Location: /FlashCourses_web/FlashCourse-web/src/app/institutions/
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: The HTML for Institutions.
+  Completion Status: Unused, will be used in data service. For more information
+    about suggested changes and improvements, refer to Web-App architecture -
+    Next Steps.
+
+  Not currently implemented. See App Architecture - Next Steps
+  For future implementation ideas.
+
+
+ -->
+
+<div class='container-fluid'>
+  <h1>Institutions</h1>
+  <!-- <p>The input type="search is used for search fields (behaves like a regular text field):</p>
+  
+    Search University:
+    <input type="search" id="universitysearch">
+    <input name="Button1" type="button" value="submit" />
+    
+  </div>
+   -->
+  <!-- <button (click)="getInstitutions()">GET SCHOOLS</button> -->
+
+  <div *ngFor="let school of _InstitutionsArray">
+    {{ school.institution_name }} <button (click)="getCourses(school.unique_id)" > Get Courses For {{ school.institution_name }} </button>
+    <button> Add a Course To {{ school.institution_name }} </button>
+    <button> Edit {{ school.institution_name }} </button>
+    <button> Delete {{ school.institution_name }} </button>
+  </div> 
+  </div>

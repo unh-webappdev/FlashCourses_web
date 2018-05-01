@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  name = 'Login! ';
   constructor() { }
 
   ngOnInit() {
   }
-  name = 'Good thing I renamed this cause otherwise this would have been super awkward. ';
-  
+
 }

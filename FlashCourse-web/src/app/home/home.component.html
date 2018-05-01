@@ -1,3 +1,235 @@
-<p>
-  home works!
-</p>
+
+
+<!-- 
+
+  home.component.html
+  Location: /FlashCourses_web/FlashCourse-web/src/app/home
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: The HTML component of the Web-App, handles views for API calls.
+  Completion Status: Prototyped. Individual datatypes will be moved
+    to data services and individual components. For more information
+    about suggested changes and improvements, refer to Web-App architecture -
+    Next Steps.
+-->
+
+
+<!--
+  New Paradigm, uses Data Service to generate
+  Courses. Unimplmented.
+
+  Refer to Web-App Architecture - Next Steps
+
+  <app-institutions></app-institutions>
+  
+  
+  
+  <button (click)="getList()">
+  Get List!
+  </button>
+ -->
+
+<img src="..\..\assets\img\flash.png">
+<h1 class="text-center">Study!</h1>
+<p class="text-center">
+<span *ngIf="!institutionShown"><button (click)="getInstitutions()">
+    Grab Colleges!</button> </span>
+  </p>
+<div *ngIf="institutionShown">
+
+
+
+<br>
+  <div
+    *ngFor="let school of InstitutionData">
+    {{ school.institution_name }}
+    <button (click)="getCourseData(school.unique_id)">Get Courses!</button>
+    <br>
+    <form (ngSubmit)="editInstitution(school.unique_id, editInstitutionF)" #editInstitutionF="ngForm">
+      Edit {{school.institution_name}} <br>
+      College Name: <input 
+                      type="text" 
+                      ngModel
+                      name="institution_name"><br>
+      IPED Number: <input 
+                      type="text"
+                      ngModel
+                      name="ipeds"><br>
+      Location:    <input 
+                          type="text" 
+                          ngModel
+                          name="location"><br>
+      <button class="btn btn-primary" 
+        type="submit">Edit {{school.institution_name}}</button>
+    </form>
+
+  </div>
+
+  <br>
+
+<form (ngSubmit)="createInstitutions(createInstitutionF)" #createInstitutionF="ngForm">
+  Create College <br>
+  IPED Number: <input 
+                  type="text" 
+                  ngModel
+                  name="ipeds"><br>
+  Institution Name: <input 
+                  type="text" 
+                  ngModel
+                  name="institution_name"><br>
+  Location:    <input 
+                  type="text"
+                  ngModel 
+                  name="location"><br>
+  <button class="btn btn-primary" type="submit">Add a College!</button>
+</form>
+
+<br>
+<form (ngSubmit)="createCourse(createCourseF)" #createCourseF="ngForm">
+  Create Course <br>
+  Course Name: <input 
+                    type="text" 
+                    ngModel
+                    name="course_title"><br>
+  Course Number: <input 
+                    type="text" 
+                    ngModel
+                    name="course_number"><br>
+  Course ID:    <input 
+                  type="text" 
+                  ngModel
+                  name="course_id"><br>
+  Description:    <input 
+                  type="text" 
+                  ngModel
+                  name="course_description"><br>
+  <button class="btn btn-primary" type="submit">Add a Course!</button>                  
+</form>
+<button class="btn btn-primary"(click)="deleteCollege(school.unique_id)">Delete College</button>
+</div>
+<br>
+
+<div *ngIf="courseShown">
+
+<div>
+  <div *ngFor="let course of courseData">
+    Course Title: {{course.course_title}} <br>
+    Course Description: {{course.course_description}} <br>
+    <br>
+    <p class = "text-center">
+    <button (click)="getDecks(course.unique_id)"> Get Decks!</button>
+  </p>
+
+    <form (ngSubmit)="createDeck(createDeckF)" #createDeckF="ngForm">
+      Create Deck <br>
+      Deck Title: <input 
+                    type="text" 
+                    ngModel
+                    name="title"><br>
+      Deck Description: <input 
+                        type="text" 
+                        ngModel
+                        name="deck_description"><br>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <button class="btn btn-primary" (click)="deleteCourse(course.unique_id)">Delete Course</button>
+    
+    <!-- 
+      Commented out because the implementation is not currently usable.
+      TODO: update editCourse to pass in UUID
+      <form  (ngSubmit)="editCourse(course.course_id, editCourseF)" #editCourseF="ngForm">
+      Edit Course <br>
+      Name: <input 
+              type="text"
+              ngModel 
+              name="course_title"><br>
+      Course Number: <input 
+              type="text"
+              ngModel 
+              name="course_number"><br>
+      Course ID: <input 
+              type="text"
+              ngModel 
+              name="course_id"><br>
+      Course Description: <input 
+              type="text"
+              ngModel 
+              name="course_description"><br>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form> -->
+
+  </div>
+</div>
+<br>
+</div>
+
+  <!-- Render Deck Data -->
+<div *ngIf="deckShown">
+    
+<div *ngFor="let deck of deckData">
+    <h1 class="text-center">Decks</h1>
+      <p class="text-center"> Created By: {{deck.parent_user}} </p> <br>
+      <p class="text-center"> Deck: {{deck.title}} </p> <br>
+      <p class="text-center"> {{deck.deck_description}}</p> <br>
+    <button (click)="getCards(deck.unique_id)">Show Cards!</button>
+    <br>
+    <form (ngSubmit)="createCard(createCardF)" #createCardF="ngForm"> 
+      Add card to {{deck.title}} <br>
+      Front:  <input 
+                type="text"
+                ngModel 
+                name="front"><br>
+      Back: <input 
+                type="text"
+                ngModel 
+                name="back"><br>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    
+  </div>
+</div>
+<br>
+
+<!-- 
+  Edit Deck Capability in CRUD.
+  <br>
+<form (ngSubmit)="editDeck(editDeckF, course.course_id)" #editDeckF="ngForm">
+  Edit Deck <br>
+  Deck Name: <input type="text" name="title" id="edeck_title"><br>
+  Parent User: <input type="text" name="parent_user" id="edeck_parent_user"><br>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<br> -->
+
+<div *ngIf="cardsShown">
+        <h1 class="text-center">Flashcards</h1> <br>
+  <div *ngIf = "currentCard">
+
+    <!-- 
+      Returns instance variable current card. 
+    -->
+    <p class="text-center" *ngIf="front"> {{currentCard.front}} </p>
+    <p class="text-center" *ngIf="!front"> {{currentCard.back}} </p>
+    <p class="text-center">
+    <button (click)="renderCardForward()">
+      Next Card
+    </button>
+    <button (click)="renderCardBackwards()">
+      Prev Card
+    </button>
+    <button (click)="deleteCard(currentCard.unique_id)">
+      Delete Card!
+    </button>
+    <button (click)="flipCard()">
+      Flip Card!
+    </button>
+  </p>
+    <form> 
+      Edit Card<br>
+      Front: <input type="text" name="front" id="ecard_front"><br>
+      Back: <input type="text" name="back" id="ecard_back"><br>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,43 +1,29 @@
+<!-- 
+  courses.component.html
+  Location: /FlashCourses_web/FlashCourse-web/src/app/courses/
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: The HTML for Courses.
+  Completion Status: Unused, will be used in data service. For more information
+    about suggested changes and improvements, refer to Web-App architecture -
+    Next Steps.
+ -->
+
 <div class='container-fluid'>
 	<h1>Courses</h1>
-</div>
-<div class='container-fluid'>
 
-	<h2>COMP 815-Information Security</h2>
+<!-- 
+	Search Courses:
+  	<input type="search" id="Courses_search">
+  	<input id="btn_Courses_search" type="button" value="submit" />
+	 -->
 
-	<textarea rows="5"  cols="80">
-	Topics include general security principles and practices, network and system security, access control methodology, and cryptography. Students develop a basic cryptographic system based on sound mathematical principles, elaborate on its features, refine it, and experiment with various ways to attack it. Some programming required.
-	</textarea>
 
-</div>
-<div class='container-fluid'>
-	<h2>COMP 820-Database Systems and Technologies</h2>
-
-	<textarea rows="5" cols="80">
-	This is a project course that provides practical experience with database systems and techonologies. Topics include data modeling, database design, system development and integration, database administration, and configuration and project management. The course emphasizes communication and collaboration with online tools. Project artifacts and activities are supported by current version control, database development and administration tools.
-	</textarea>
-</div>
-
-<div class='container-fluid'>
-	<h2>COMP 830-Object-Oriented Software Development</h2>
-
-	<textarea rows="5" cols="80">
-	Presents an iterative methodology for developing software systems. Development activities include requirements elicitation and analysis, system and object design, implementation and testing, project and configuration management, infrastructure maintenance, and system deployment to the end user. Students work in teams, assume developer roles, build models of a real-world system, and produce proof-of-concepts, prototypes, or system upgrades.
-	</textarea>
-</div>
-
-<div class='container-fluid'>
-	<h2>COMP 805-Web Application Development</h2>
-
-	<textarea rows="5" cols="80">
-	Students work in teams and implement, test, document, demonstrate, and deploy web systems that solve organizational needs expressed by real clients. Emphasis is on advanced server-side and client-side programming and integration of web applications with database and web server applications. Free and open source development and communication tools are used to carry out the course project.
-	</textarea>
-</div>
-
-<div class='container-fluid'>
-	<h2>COMP 835-Networking Technologies</h2>
-
-	<textarea rows="5" cols="80">
-	Introduces advanced topics in computer networks. The focus is on principles, architectures, and protocols used in modern networked systems, such as routing, quality of service, wireless and mobile networks, large-scale peer-to-peer systems, virtualization, and cloud computing. Students analyze tradeoffs in large and complex networks and design and evaluate networked systems. Concrete experiences of these learning activities are provided through lab and online exercises.
-	</textarea>
+<div>
+	<div *ngFor="let course of  _courseArray" class='container-fluid' id="courses_data_holder">
+		<h4 id="cour_title" class="text-center"> {{ course.course_title }} </h4>
+		<br>
+		<p id="cour_desc" class="text-center"> {{ course.course_description }} </p>
+		
+	</div>
 </div>

@@ -1,3 +1,9 @@
+/*
+  Not currently implemented. See App Architecture - Next Steps
+  For future implementation ideas.
+
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

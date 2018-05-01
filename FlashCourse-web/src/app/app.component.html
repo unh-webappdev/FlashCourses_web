@@ -1,15 +1,24 @@
+<!-- 
+  app.component.html
+  Location: /FlashCourses_web/FlashCourse-web/src/app/
+  Primary Contributor: Lawrence Thompson
+  Description: The NavBar and Router Logic for the App.
+  Routing components are passed into the router-outlet component tag.
+  Completion Status: Prototyped. Needs web design improvements.
+
+ -->
 
 <head>
-  <title>flashcourses</title>
+  <title>FlashCourses</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
   <div class='container-fluid'>
     <nav class ='nav nav-pills'>
+      <!-- Works with routing to input routes into browser. -->
       <a class="nav-link active" routerLink="/home">Home</a>
       <a class="nav-link active" routerLink="/institutions">Institutions</a>
       <a class="nav-link active" routerLink="/courses">Courses</a>
-      <a class="nav-link active" routerLink="/coursedetails">Course-Details</a>
       <a class="nav-link active" routerLink="/login">Log-in</a>
       <a class="nav-link active" routerLink="/about">About</a>
       <a class="nav-link active" routerLink="/contact">Contact</a>
