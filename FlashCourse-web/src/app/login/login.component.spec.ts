@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/login/login.component.spec.ts
 Lgin Component spec contain one or more expectations that test the state of the code.
 A spec whose expectations all succeed will be passing and a spec with any failures will fail.

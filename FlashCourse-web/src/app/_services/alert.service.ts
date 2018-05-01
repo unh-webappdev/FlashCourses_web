@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/_services/alert.service.ts
 The alert service enables any component in the application to display alert messages at 
 the top of the page via the alert component.

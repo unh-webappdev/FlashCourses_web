@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/home/home.component.ts
 The home component defines an angular 2 component that gets all users from the user service and 
 makes them available to the template via the 'users' property.

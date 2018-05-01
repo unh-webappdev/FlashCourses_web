@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/privacy/privacy.component.ts
 The privacy component handles and determines behavior of privacy page
 */

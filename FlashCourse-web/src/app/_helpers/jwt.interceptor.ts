@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 28, 2018
 Path: /app/_helpers/jwt.interceptor.ts
 The JWT Interceptor intercepts http requests from the application to add a JWT auth token to
 the Authorization header if the user is logged in. It's implemented using the HttpInterceptor class 

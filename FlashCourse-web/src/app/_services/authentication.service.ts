@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/_services/authentication.service.ts
 The JWT authentication service is used to login and logout of the application, 
 to login it posts the users credentials to the api and checks the response for a JWT token, 

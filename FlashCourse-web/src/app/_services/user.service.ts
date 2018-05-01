@@ -1,11 +1,11 @@
-import { Http } from '@angular/http';
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 30, 2018
 Path: /app/_services/user.service.ts
 The user service contains a method for getting all users from the api,
 accessing a secure api endpoint with the http authorization header set after logging in to the application.
 */
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { RequestOptions, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -19,6 +19,7 @@ import { User } from '../_models/user';
 export class UserService {
     API_URL: string = 'http://159.65.236.42';
     AUTH_TOKEN: string = '';
+    model: any;
 
     constructor(
         private http: Http,

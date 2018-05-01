@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/login/login.component.ts
 The login component uses the authentication service to login and logout of the application. 
 It automatically logs the user out when it initializes (ngOnInit) so the login page can also be used to logout.

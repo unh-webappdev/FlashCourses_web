@@ -1,6 +1,6 @@
 /*
 Author: Andry Bintoro, Lawrence Thompson
-Last Updated: April 2018
+Last Updated: April 29, 2018
 Path: /app/app.routing.ts
 The app routing file defines the routes of the application, each route contains a path and associated component. 
 The home route is secured by passing the AuthGuard to the canActivate property of the route.
