@@ -1,3 +1,13 @@
+/*
+  app.module.ts
+  Location: /FlashCourses_web/FlashCourse-web/src/app/
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: A listing of modules for the Angular App.
+  Completion Status: Prototyped. All next steps will alter this.
+
+ */
+
 import { DataService } from './data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

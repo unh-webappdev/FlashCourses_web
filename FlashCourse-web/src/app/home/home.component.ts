@@ -1,11 +1,14 @@
 /*
   home.component.ts
-  The main component of the Web-App
-  For information about suggested changes and improvements,
-    refer to Web-App architecture - Next Steps.
+  Location: /FlashCourses_web/FlashCourse-web/src/app/home
+  Primary Contributor: Lawrence Thompson
+  Description: The main component of the Web-App, handles API calls.
+  Completion Status: Prototyped. Individual datatypes will be moved
+    to data services and individual components. For more information
+    about suggested changes and improvements, refer to Web-App architecture -
+    Next Steps.
 
 */
-
 
 import { Component, OnInit } from '@angular/core';
 

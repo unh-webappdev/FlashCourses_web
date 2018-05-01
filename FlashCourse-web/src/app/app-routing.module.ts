@@ -1,3 +1,12 @@
+/*
+  app-routing.module.ts
+  Location: /FlashCourses_web/FlashCourse-web/src/app/
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: The routing logic of API routes from component to component.
+  Completion Status: Prototyped. Routing will be done by passing in variables.
+*/
+
 import { NgModule } from '@angular/core';
 import { ModuleWithProviders } from '@angular/core';
 import {

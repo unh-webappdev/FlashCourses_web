@@ -1,6 +1,14 @@
 /*
+
   data.service.ts
   Lawrence P. Thompson
+  Location: /FlashCourses_web/FlashCourse-web/src/app/
+  Primary Contributor: Lawrence Thompson
+  Last Updated: April 30th, 2018
+  Description: The data service for all data in app.
+  Completion Status: Unused, will be used in data service. For more information
+    about suggested changes and improvements, refer to Web-App architecture -
+    Next Steps.
 
   Currently not implemented. Passes data between components
   for more modularized components.
@@ -8,7 +16,9 @@
   Once implemented, FlashCourses will be closer to the industry
   standard.
 
-*/
+ */
+
+
 
 
 
